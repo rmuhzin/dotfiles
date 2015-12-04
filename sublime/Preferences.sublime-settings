@@ -1,0 +1,50 @@
+{
+	"added_words":
+	[
+		"Admin"
+	],
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"color_inactive_tabs": true,
+	"color_scheme": "Packages/Oceanic Color Scheme/Themes/Oceanic.tmTheme",
+	"default_line_ending": "unix",
+	"draw_white_space": "all",
+	"enable_tab_scrolling": false,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"Desktop.ini",
+		"*.pyc",
+		"._*",
+		"Thumbs.db",
+		".Spotlight-V100",
+		".Trashes"
+	],
+	"fold_buttons": true,
+	"folder_exclude_patterns":
+	[
+		".git",
+		"node_modules"
+	],
+	"font_face": "sourcecodepro",
+	"font_size": 18,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Emmet",
+		"GitGutter",
+		"InactivePanes_",
+		"Predawn",
+		"Theme - Centurion",
+		"Theme - Phoenix",
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"minimap_scroll_to_clicked_text": true,
+	"status_bar_brighter": false,
+	"tab_size": 4,
+	"tabs_small": true,
+	"theme": "Afterglow.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"word_wrap": true
+}
