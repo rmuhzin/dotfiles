@@ -1,12 +1,8 @@
 {
-	"added_words":
-	[
-		"Admin"
-	],
 	"bold_folder_labels": true,
 	"caret_style": "phase",
 	"color_inactive_tabs": true,
-	"color_scheme": "Packages/Oceanic Color Scheme/Themes/Oceanic.tmTheme",
+	"color_scheme": "Packages/Enlightened Color Scheme/enlightened.tmTheme",
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
@@ -27,7 +23,7 @@
 		"node_modules"
 	],
 	"font_face": "sourcecodepro",
-	"font_size": 18,
+	"font_size": 15,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
@@ -38,6 +34,11 @@
 		"Theme - Centurion",
 		"Theme - Phoenix",
 		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
 	],
 	"line_padding_bottom": 1,
 	"minimap_scroll_to_clicked_text": true,
