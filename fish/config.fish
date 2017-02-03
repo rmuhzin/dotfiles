@@ -107,7 +107,7 @@ alias weather="curl -4 http://wttr.in/Kochi"
 alias whatismyip='curl ipecho.net/plain'
 alias isp='curl ipinfo.io/org'
 alias ispdetails='curl ipinfo.io'
-alias p='ping google.com'
+alias p='ping -v -c 10 google.com'
 
 set -xU JDK_HOME=/usr/lib/jvm/jdk1.7.0:$JDK_HOME
 set -xU JAVA_HOME=/usr/lib/jvm/java-7-orausr/local/go/bincle
