@@ -115,3 +115,6 @@ set -xU GOROOT=/usr/local/go
 set -xU GOBIN=/usr/local/go/bin
 set -xU PATH=$PATH:/usr/local/go/bin
 
+alias .,='cd -'
+
+alias copy="xclip -selection c"

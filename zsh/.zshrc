@@ -46,3 +46,5 @@ antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme agnoster
 antigen apply
+
+alias copy="xclip -selection c"
