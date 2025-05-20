@@ -1,15 +1,12 @@
-# Path to Oh My Fish install.
-set -gx OMF_PATH /home/muhzin/.local/share/omf
-
-# Load oh-my-fish configuration.
-source $OMF_PATH/init.fish
+set fish_greeting
 
 #
 # Aliases
+# (sorted alphabetically)
 #
 
 alias g='git'
-alias _='sudo'
+#alias _='sudo'
 
 alias ga='git add'
 alias gaa='git add --all'
@@ -82,7 +79,11 @@ alias gvt='git verify-tag'
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
+#set -xU PATH=/home/muhzin/learn/sbt/bin:$PATH
 alias ins="sudo apt-get install"
+alias lxc="sudo lxc-start -n muhzin.dev"
+alias lxcx="sudo lxc-stop -n muhzin.dev"
+alias lime="subl"
 alias junk='cd ~/junk'
 alias h='history'
 alias j='jobs -l'
@@ -92,13 +93,12 @@ alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias halt='sudo /sbin/halt'
 alias shutdown='sudo /sbin/shutdown'
-alias reload='source ~/.zshrc'
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias gg='gitg'
-
+alias p='ping -v -c 10 google.com'
 alias play="clementine -t"
 alias next="clementine --next"
 alias prev="clementine --previous"
@@ -107,14 +107,19 @@ alias weather="curl -4 http://wttr.in/Kochi"
 alias whatismyip='curl ipecho.net/plain'
 alias isp='curl ipinfo.io/org'
 alias ispdetails='curl ipinfo.io'
-alias p='ping -v -c 10 google.com'
-
-set -xU JDK_HOME=/usr/lib/jvm/jdk1.7.0:$JDK_HOME
-set -xU JAVA_HOME=/usr/lib/jvm/java-7-orausr/local/go/bincle
-set -xU GOROOT=/usr/local/go
-set -xU GOBIN=/usr/local/go/bin
-set -xU PATH=$PATH:/usr/local/go/bin
+alias mousefix='gsettings set org.gnome.settings-daemon.plugins.cursor active false'
+alias reload="source ~/.config/fish/config.fish"
 
 alias .,='cd -'
 
 alias copy="xclip -selection c"
+# alias cpwd="pwd | copy"
+
+#alias gtag="gl ;and g autotag ;and gp --tags"
+alias gtag="/home/Muhzin/work/gtag.sh"
+
+set PATH /usr/local/go/bin $PATH
+set PATH /home/Muhzin/go/bin $PATH
+
+#set -xU JDK_HOME=/usr/lib/jvm/jdk1.7.0:$JDK_HOME
+#set -xU JAVA_HOME=/usr/lib/jvm/java-7-orausr/local/go/bincle
