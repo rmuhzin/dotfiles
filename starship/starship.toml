@@ -222,3 +222,24 @@ disabled = true
 ssh_only = false
 format = '[$ssh_symbol$hostname]($style) '
 style = 'bold green'
+
+[custom.transient_time]
+command = "date '+%I:%M %p '"
+when = 'true'
+format = '[$output]($style) '
+style = 'bold blue'
+
+
+[custom.transient_dir]
+command = "basename $PWD"
+when = true
+format = "  [$output]($style) "
+style = "bold cyan"
+description = "Display current directory name only"
+
+[custom.pretty_dir]
+command = '''fish -c "string replace $HOME '~' $PWD"'''
+when = true
+format = "   [$output]($style) "
+style = "bold green"
+description = "Display current directory with ~ for home"

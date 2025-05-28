@@ -128,13 +128,12 @@ set PATH /usr/local/go/bin $PATH
 set PATH /home/muhzin/go/bin $PATH
 
 function starship_transient_prompt_func
-  starship module directory
+  starship module custom.transient_dir
   starship module character
 end
 
 function starship_transient_rprompt_func
-  starship module cmd_duration
-  starship module time
+  starship module custom.transient_time
 end
 
 starship init fish | source
