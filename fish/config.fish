@@ -127,12 +127,36 @@ alias ddown="sudo docker-compose -f /home/muhzin/work/mmshamar/traefik-compose.y
 set PATH /usr/local/go/bin $PATH
 set PATH /home/muhzin/go/bin $PATH
 
+function store_cmd_duration --on-event fish_postexec
+    set -g LAST_CMD_DURATION $CMD_DURATION
+end
+function format_duration
+    if test -n "$LAST_CMD_DURATION"
+        if test $LAST_CMD_DURATION -gt 500
+            set duration_sec (math "round($LAST_CMD_DURATION / 1000)")
+            
+            # Color based on duration
+            if test $duration_sec -lt 3
+                set color (set_color cyan)
+            else if test $duration_sec -lt 10
+                set color (set_color yellow)
+            else
+                set color (set_color red)
+            end
+            
+            set reset (set_color normal)
+            printf "%s %ss%s " $color $duration_sec $reset
+        end
+    end
+end
+
 function starship_transient_prompt_func
   starship module custom.transient_dir
   starship module character
 end
 
 function starship_transient_rprompt_func
+  format_duration
   starship module custom.transient_time
 end
 
