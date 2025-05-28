@@ -7,6 +7,7 @@ set fish_greeting
 
 alias g='git'
 #alias _='sudo'
+abbr -a _ 'sudo'
 
 alias ga='git add'
 alias gaa='git add --all'
@@ -116,10 +117,32 @@ alias copy="xclip -selection c"
 # alias cpwd="pwd | copy"
 
 #alias gtag="gl ;and g autotag ;and gp --tags"
-alias gtag="/home/Muhzin/work/gtag.sh"
+alias gtag="/home/muhzin/work/gtag.sh"
+
+alias dup="sudo docker-compose -f /home/muhzin/work/mmshamar/mm-shamar-fe/docker-compose.yaml up -d "
+alias ddown="sudo docker-compose -f /home/muhzin/work/mmshamar/mm-shamar-fe/docker-compose.yaml down"
 
 set PATH /usr/local/go/bin $PATH
-set PATH /home/Muhzin/go/bin $PATH
+set PATH /home/muhzin/go/bin $PATH
 
-#set -xU JDK_HOME=/usr/lib/jvm/jdk1.7.0:$JDK_HOME
-#set -xU JAVA_HOME=/usr/lib/jvm/java-7-orausr/local/go/bincle
+# function starship_transient_prompt_func
+#   starship module directory
+# end
+
+# function starship_transient_rprompt_func
+#   starship module time
+# end
+
+
+function starship_transient_prompt_func
+  starship module directory
+  starship module character
+end
+
+function starship_transient_rprompt_func
+  starship module cmd_duration
+  starship module time
+end
+
+starship init fish | source
+enable_transience
