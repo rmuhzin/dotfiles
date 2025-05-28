@@ -119,20 +119,13 @@ alias copy="xclip -selection c"
 #alias gtag="gl ;and g autotag ;and gp --tags"
 alias gtag="/home/muhzin/work/gtag.sh"
 
-alias dup="sudo docker-compose -f /home/muhzin/work/mmshamar/mm-shamar-fe/docker-compose.yaml up -d "
-alias ddown="sudo docker-compose -f /home/muhzin/work/mmshamar/mm-shamar-fe/docker-compose.yaml down"
+alias dup="sudo docker-compose -f /home/muhzin/work/mmshamar/traefik-compose.yaml up -d; sudo docker-compose -f /home/muhzin/work/mmshamar/docker-compose.yaml up -d"
+alias dbuild="sudo docker-compose -f /home/muhzin/work/mmshamar/docker-compose.yaml --profile build run npm-install"
+
+alias ddown="sudo docker-compose -f /home/muhzin/work/mmshamar/traefik-compose.yaml down;sudo docker-compose -f /home/muhzin/work/mmshamar/docker-compose.yaml down"
 
 set PATH /usr/local/go/bin $PATH
 set PATH /home/muhzin/go/bin $PATH
-
-# function starship_transient_prompt_func
-#   starship module directory
-# end
-
-# function starship_transient_rprompt_func
-#   starship module time
-# end
-
 
 function starship_transient_prompt_func
   starship module directory
