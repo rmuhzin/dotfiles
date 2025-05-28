@@ -4,9 +4,10 @@ format = """
 [╭](fg:current_line)\
 $os\
 $status\
-$directory\
+[─](fg:current_line)$directory\
 $git_branch\
 $git_status\
+$git_state\
 $fill\
 $nodejs\
 $bun\
@@ -20,11 +21,11 @@ $zig\
 $rust\
 $c\
 $cmd_duration\
-$time\
+[─](fg:current_line)$time\
 $username\
 $hostname\
 $line_break\
-$character\
+[╰](fg:current_line)$character\
 """
 
 palette = 'catppuccin_mocha'
@@ -64,8 +65,55 @@ yellow = '#E5C07B'
 status = '#e23140'
 
 [os]
-format = '(fg:current_line)(fg:orange)[ ](fg:orange)(fg:orange)'
+format = '[$symbol](fg:orange)'
 disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
 
 [status]
 format = '[─](fg:current_line)[](fg:status)[](fg:primary bg:status)[](fg:status bg:box)[ $status](fg:foreground bg:box)[](fg:box)'
@@ -76,7 +124,7 @@ pipestatus_format = '[─](fg:current_line)[](fg:status)[](fg:primary bg:s
 disabled = false
 
 [directory]
-format = '[─](fg:current_line)[](fg:box)[ $read_only$truncation_symbol$path](fg:cyan bg:box)[](fg:box)'
+format = '[](fg:box)[ $read_only$truncation_symbol$path](fg:cyan bg:box)[](fg:box)'
 home_symbol = ' ~/'
 truncation_symbol = ' '
 truncation_length = 2
@@ -89,14 +137,14 @@ symbol = ' '
 
 [git_status]
 format = '[$all_status](fg:red bg:box)[](fg:box)'
-conflicted = ' ='
 up_to_date = ''
 untracked = ' ?${count}'
 stashed = ' $'
 modified = ' !${count}'
-staged = ' +'
+staged = ' +{$count}'
 renamed = ' »'
-deleted = ' ✘'
+deleted = ' ✘{count}'
+conflicted = ""
 ahead = ' ⇡${count}'
 diverged = ' ⇕⇡${ahead_count}⇣${behind_count}'
 behind = ' ⇣${count}'
@@ -155,7 +203,7 @@ min_time = 500
 format = '[─](fg:current_line)[](fg:orange)[](fg:primary bg:orange)[](fg:orange bg:box)[ $duration](fg:foreground bg:box)[](fg:box)'
 
 [time]
-format = '[─](fg:current_line)[](fg:box)[󰦖 ](fg:purple bg:box)[$time](fg:purple bg:box)[](fg:box)'
+format = '[](fg:box)[󰦖 ](fg:purple bg:box)[$time](fg:purple bg:box)[](fg:box)'
 time_format = '%I:%M %p'
 disabled = false
 
@@ -165,7 +213,7 @@ show_always = true
 
 [character]
 format = """
-[╰─$symbol](fg:current_line) """
+[─$symbol](fg:current_line) """
 success_symbol = '[](fg:bold white)'
 error_symbol = '[×](fg:bold red)'
 
