@@ -4,6 +4,7 @@ format = """
 [╭](fg:current_line)\
 $os\
 $status\
+$sudo\
 [─](fg:current_line)$directory\
 $git_branch\
 $git_status\
@@ -121,6 +122,11 @@ pipestatus = true
 pipestatus_separator = '-'
 pipestatus_segment_format = '$status'
 pipestatus_format = '[─](fg:current_line)[](fg:status)[](fg:primary bg:status)[](fg:status bg:box)[ $pipestatus](fg:foreground bg:box)[](fg:box)'
+disabled = false
+
+[sudo]
+format = '[─](fg:current_line)[$symbol](fg:red)'
+symbol = '󰀅 '
 disabled = false
 
 [directory]
